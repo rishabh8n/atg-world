@@ -1,38 +1,495 @@
-.App {
-  text-align: center;
+*{
+  margin: 0;
+  padding: 0;
+  border: none;
+  outline: none;
+  box-sizing: border-box;
+  font-family: Roboto, sans-serif;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+button{
+  cursor: pointer;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.App{
+  padding-bottom: 3em;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.header{
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 0.2em 0;
+  background-color: #fff;
+  position: sticky;
+  top: 0;
+  min-height: 8vh;
+  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.12);
+}
+.search{
+  position: relative;
+}
+.search input{
+  height: 100%;
+  background: #F2F2F2;
+  width: 25em;
+  padding: 0.5em 1em 0.5em 3em;
+  border-radius: 2em;
+}
+.search-icon{
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 0.7em;
+  width: 14px;
+  aspect-ratio: 1;
+}
+.create-acc-btn{
+  background-color: #fff;
+  font-weight: 600;
+  font-size: 12px;
+  cursor: pointer;
+}
+.create-acc-btn span{
+  color: #339AF0;
+}
+.hero{
+  position: relative;
+  height: 270px;
+}
+.hero img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.hero .overlay{
+ position: absolute;
+ top: 0;
+ width: 100%;
+ height: 100%;
+ background: linear-gradient(180deg, rgba(0, 0, 0, 0.45) 0%, rgba(0, 0, 0, 0.6) 100%);
+}
+.hero .overlay .group-name{
+  color: #fff;
+  position: absolute;
+  bottom: 3em;
+  left: 11%;
+}
+.group-name h2{
+  font-weight: 600;
+  font-size: 1.4rem;
+}
+.group-name p{
+  font-weight: 400;
+  font-size: 0.75rem;
+}
+.post-container{
+  margin: 1em 0 0 11%;
+  width: 40%;
   display: flex;
   flex-direction: column;
+  gap: 0.7em;
+}
+.menu{
+  display: flex;
   align-items: center;
+  background-color: #fff;
+  gap: 2px;
+  padding: 0.5em 0.2em;
+  aspect-ratio: 1;
+  border-radius: 4px;
+}
+.menu div{
+  width: 5px;
+  height: 5px;
+  background-color: black;
+  border-radius: 50%;
+}
+.menu:hover{
+  background: #BFC0C0;
+}
+.post{
+  border: 1px solid #E0E0E0;
+  border-radius: 8px;
+}
+.post img{
+  width: 100%;
+}
+.post .main-content{
+  padding: 0.6em;
+}
+.title-bar{
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+.post h2{
+  margin-top: 0.4em;
+  width: 85%;
+  font-weight: 600;
+  font-size: 16px;
+}
+.post-content{
+  font-size: 13px;
+  color: #5C5C5C;
+  margin: 0.5em 0;
+}
+.post-footer{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0.6em 0 0 0;
+}
+.user-info{
+  display: flex;
+  align-items: center;
+  gap: 0.6em;
+}
+.user-info img{
+  width: 30px;
+  aspect-ratio: 1;
+}
+.views{
+  font-weight: 500;
+font-size: 12px;
+color: #525252;
+}
+
+.signup-overlay{
+  z-index: 99999;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  background-color: #0000003d;
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
 }
-
-.App-link {
-  color: #61dafb;
+.signup{
+  position: relative;
+  background-color: #fff;
+border-radius: 8px 8px 8px 8px;
+animation: in 0.25s ease ;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@keyframes in {
+  from{
+    transform: scale(0);
+    opacity: 0;
   }
-  to {
-    transform: rotate(360deg);
+  to{
+    transform: scale(1);
+    opacity: 1;
+  }
+  
+}
+@keyframes up {
+  from{
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to{
+    transform: translateY(0);
+    opacity: 1;
+  }
+  
+}
+.signup .top{
+  background: #EFFFF4;
+border-radius: 8px 8px 0px 0px;
+color: #008A45;
+font-size: 0.8rem;
+padding: 0.65em 3.5em;
+}
+.signup .main,.signup .heading{
+  display: flex;
+  padding: 1.5em 1.5em 0 1.5em;
+  justify-content: space-between;
+  gap: 2em;
+}
+.signup .heading{
+  align-items: center;
+}
+.signup .heading p{
+  font-size: 12px;
+text-align: right;
+color: #3D3D3D;
+cursor: pointer;
+}
+.signup .heading span{
+  color: #339AF0;
+}
+.signup .main{
+  padding-bottom: 1.5em;
+}
+.signup .form form{
+  display: flex;
+  flex-direction: column;
+  width: 17em;
+}
+.name{
+  display: flex;
+}
+.name input{
+  width: 50%;
+}
+.form form input{
+  background: #F7F8FA;
+border: 1px solid #D9D9DB;
+padding: 0.6em;
+}
+.form-submit{
+  margin: 0.8em 0;
+  background: #2F6CE5;
+  color: #fff;
+border-radius: 20px;
+padding: 0.6em;
+width: 100%;
+cursor: pointer;
+}
+.sign-up-fb,.sign-up-g{
+  margin: 0.4em 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.7em;
+  border: 0.6px solid #D9D9DB;
+  border-radius: 20px;
+padding: 0.6em;
+background-color: #fff;
+cursor: pointer;
+}
+.sign-up-fb:hover,.sign-up-g:hover,.form-submit:hover{
+  opacity: 0.7;
+}
+.art p{
+  font-size: 0.65rem;
+  text-align: right;
+letter-spacing: -0.008em;
+
+color: #000000;
+
+opacity: 0.6;
+margin-top: 2.6em;
+}
+.forgot-pass{
+  margin-top: 0.8em;
+  display: block;
+  width: 100%;
+  font-weight: 700;
+  text-align: center;
+  font-size: 0.75rem;
+}
+.close{
+  top: -30px;
+  right: 0;
+  position: absolute;
+  aspect-ratio: 1;
+  width: 20px;
+  font-size: 0.65rem;
+  padding: 0.2em;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(204, 204, 204, 0.979);
+  cursor: pointer;
+}
+
+.post-options{
+  margin: 1em 11% 1em 11%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+.post-options::after{
+  content: '';
+  position: absolute;
+  height: 2px;
+  background-color: #E0E0E0;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+}
+.post-options-1,.post-options-2{
+  display: flex;
+  align-items: center;
+  gap: 0.9em;
+}
+.post-options-1 button{
+  padding: 1em 0;
+  background-color: #fff;
+  color: #8A8A8A;
+  position: relative;
+  cursor: pointer;
+}
+.post-options-1 button.active{
+  color: #000000;
+}
+.post-options-1 button.active::after{
+  content: '';
+  position: absolute;
+  height: 2px;
+  background-color: #000000;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  z-index: 9;
+}
+
+.write{
+  border-radius: 4px;
+  padding: 0.6em;  
+  cursor: pointer;
+}
+.join{
+  background: #2F6CE5;
+  border-radius: 4px;
+  padding: 0.6em;  
+  color: #fff;
+  cursor: pointer;
+}
+.leave{
+  background: #fff;
+  border-radius: 4px;
+  padding: 0.6em;  
+  cursor: pointer;
+  border: 0.8px solid #989899;
+  color: #989899;
+}
+.location{
+  max-width: 250px;
+  margin-top: 4em;
+}
+.location p{
+  font-size: 12px;
+  opacity: 0.5;
+}
+
+.post-options.mobile{
+  display: none;
+}
+.mobile{
+  display: none;
+}
+@media only screen and (max-width: 799px) {
+  .header{
+    min-height: 2vh;
+    justify-content: end;
+    padding: 0.3em 0.7em;
+  }
+  .header>*{
+    display: none;
+  }
+  .create-acc-btn.mobile{
+    display: block;
+  }
+  .desktop{
+    display: none;
+  }
+  .mobile{
+    display: block;
+  }
+  
+  .hero .overlay .group-name{
+    color: #fff;
+    position: absolute;
+    bottom: 2em;
+    left: 1em;
+  }
+  .post-options{
+    margin: 0;
+    padding: 0.7em;
+  }
+  .post-options::after{
+    display: none;
+  }
+  .post-options.mobile{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+  .post-options.mobile p{
+    font-weight: 700;
+  }
+  .post-options.mobile button{
+    font-weight: 700;
+    padding: 0.6em 0.8em;
+    background: #F1F3F5;
+    border-radius: 4px;
+  }
+  .post-options-1{
+    display: none;
+  }
+  .post-options-2{
+    display: none;
+  }
+  .location{
+    display: none;
+  }
+  .post-container{
+    margin: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 0.9em;
+  }
+  .write{
+    position: fixed;
+    bottom: 1em;
+    right: 1em;
+    border-radius: 50%;
+    padding: 1em;
+    background: linear-gradient(180deg, #FF5C5C 0%, #F0568A 100%);
+box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.18), 0px 0px 2px rgba(0, 0, 0, 0.08);
+  }
+  .join{
+    position: absolute;
+    top: 3em;
+    right: 1em;
+    border-radius: 4px;
+    border: 0.8px solid #FFFFFF;
+    border-radius: 4px;
+    color: white;
+    background-color: #00000000;
+  }
+  .signup{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100vw;
+    border-radius: 8px 8px 0 0;
+animation: up 0.25s ease ;
+
+  }
+  .signup .form{
+    width: 100%;
+  }
+  .signup .form form{
+    width: 100%;
+  }
+  .signup .form p{
+    font-size: 0.9rem;
+    white-space: nowrap;
+    cursor: pointer;
+  }
+  .form-submit{
+    width: 35%;
+  }
+  .heading p{
+    display: none;
+  }
+  .signup .art,.signup .top{
+    display: none;
+  }
+  .signup .main{
+    justify-content: center;
+  }
+  .close{
+    top:2.2em;
+    right: 1.6em;
+    background-color: #000000;
+    color: white;
   }
 }

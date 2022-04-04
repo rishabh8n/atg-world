@@ -1,6 +1,5 @@
-import {useState,useEffect} from 'react';
+import {useState} from 'react';
 import './App.css';
-import axios from 'axios';
 import hero from './assets/hero.png';
 import Header from './components/header';
 import post1 from './assets/post1.png';
@@ -67,19 +66,6 @@ function App() {
   const [signup,setSignup] = useState(false);
   const [active,setActive] = useState('all');
   const [joined,setJoined] = useState(false);
-  // const getData=async()=>{
-  //   const patientDetails =await axios.get('https://619f39821ac52a0017ba467e.mockapi.io/patientDetails');
-  //   const appointmentDetails = await axios.get('https://619f39821ac52a0017ba467e.mockapi.io/appointment_details');
-  //   const files = await axios.get('https://619f39821ac52a0017ba467e.mockapi.io/Files');
-  //   const doctorDetails = await axios.get('https://619f39821ac52a0017ba467e.mockapi.io/DoctorDetails');
-  //   console.log(patientDetails.data[0]);
-  //   console.log(appointmentDetails.data[0]);
-  //   console.log(files.data[0]);
-  //   console.log(doctorDetails.data[0]);
-  // }
-  // useEffect(() => {
-  //   getData();
-  // }, [])
   
   return (
     <div className="App">
